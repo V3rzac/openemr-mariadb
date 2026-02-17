@@ -13,9 +13,6 @@ ENV MYSQL_DATABASE=openemr \
 # Puerto de MariaDB
 EXPOSE 3306
 
-# Persistencia de datos
-VOLUME ["/var/lib/mysql"]
-
 # Salud básica del contenedor
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=5 \
 	CMD mariadb-admin ping -h 127.0.0.1 --silent || exit 1
